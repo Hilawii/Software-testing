@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text mocha \"src/test/compact.test.js\""
+    "test": "nyc --reporter=lcov --reporter=text mocha \"src/test/*.test.js\""
   },
   "nyc": {
     "reporter": ["lcov", "text"],
