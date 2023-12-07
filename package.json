@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "nyc mocha \"**/*_test.js\"",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "test:coverage": "nyc npm test"
   },
   "nyc": {
     "reporter": ["lcov", "text"],
