@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha \"test/*2.test.js\"",
-    "coverage": "nyc --reporter=lcov --reporter=text --all"
+    "coverage": "nyc --reporter=lcov --reporter=text --all mocha \"test/*2.test.js\""
   },
   "nyc": {
     "reporter": ["lcov", "text"],
