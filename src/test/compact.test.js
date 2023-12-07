@@ -1,4 +1,4 @@
-import compact from "./compact.js";
+import compact from "../compact.js";
 import { expect } from 'chai';
 describe('compact', () => {
     it('removes falsey values from an array', () => {

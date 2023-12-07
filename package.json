@@ -5,12 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test:coverage": "nyc npm test"
+    "test": "nyc mocha \"src/test/*.test.js\"",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "reporter": ["lcov", "text"],
     "include": ["src/**/*.js"],
-    "exclude": ["**/*_test.js"]
+    "exclude": ["src/**/*.test.js", "src/.internal/**"],
+    "all": true
   },
   "author": "",
   "license": "MIT",
