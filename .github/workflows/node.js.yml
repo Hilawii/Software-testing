@@ -22,10 +22,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm test
-      - name: Coveralls
+      - name: Run Tests
+        run: npm run test
+        continue-on-error: true
+      - name: Generate Coverage Report
+        run: npm run test:coverage
+      - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v2.2.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
