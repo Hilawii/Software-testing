@@ -5,13 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "nyc mocha \"src/**/*.test.js\"",
+    "test": "nyc mocha \"src/test/*.test.js\"",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "reporter": ["lcov", "text"],
-    "include": ["src/**/*.js"],
-    "exclude": ["**/*.test.js", "src/.internal/*.js"],
+    "include": ["src/*.js"],
+    "exclude": ["src/test/*.test.js", "src/.internal/*.js"],
     "all": true
   },
   "author": "",
