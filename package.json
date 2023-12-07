@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "test": "mocha '**/*.test.js'", 
     "test:coverage": "nyc npm test \"**/*.test.js\"",
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
