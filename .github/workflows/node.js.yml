@@ -30,7 +30,7 @@ jobs:
         run: npm run test
         continue-on-error: true
       - name: Generate Coverage Report
-        run: npm run test:coverage
+        run: npm run test
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v2.2.3
         with:
