@@ -5,13 +5,13 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text mocha \"src/test/*.test.js\""
+    "test": "nyc --reporter=lcov --reporter=text --all mocha \"test/*2.test.js\""
   },
   "nyc": {
     "reporter": ["lcov", "text"],
     "include": ["src/*.js"],
-    "exclude": ["src/test/*.test.js", "src/.internal/*.js"],
-    "all": true
+    "all": true,
+    "useSpawnWrap": true
   },
   "author": "",
   "license": "MIT",

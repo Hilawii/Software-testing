@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import divide from "../divide.js";
+import divide from "../src/divide.js";
 
 describe('divide', () => {
     it('should divide two positive numbers correctly', () => {

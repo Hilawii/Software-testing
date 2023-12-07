@@ -1,26 +1,32 @@
-import compact from "../compact.js";
+import compact from "../src/compact.js"; // Adjust the path as per your project structure
 import { expect } from 'chai';
+
 describe('compact', () => {
     it('removes falsey values from an array', () => {
-        expect(compact([0, 1, false, 2, '', 3])).to.eql([1, 2, 3]);
+        const result = compact([0, 1, false, 2, '', 3]);
+        expect(result).to.eql([1, 2, 3]);
     });
 
     it('returns an empty array when all values are falsey', () => {
-        expect(compact([0, false, '', null, undefined, NaN])).to.eql([]);
+        const result = compact([0, false, '', null, undefined, NaN]);
+        expect(result).to.eql([]);
     });
 
     it('handles an array with only truthy values', () => {
-        expect(compact([1, 2, 3])).to.eql([1, 2, 3]);
+        const result = compact([1, 2, 3]);
+        expect(result).to.eql([1, 2, 3]);
     });
 
     it('handles an empty array', () => {
-        expect(compact([])).to.eql([]);
+        const result = compact([]);
+        expect(result).to.eql([]);
     });
 
     it('handles arrays with complex elements', () => {
         const obj = { a: 1 };
         const func = () => {};
-        expect(compact([0, obj, '', func, NaN])).to.eql([obj, func]);
+        const result = compact([0, obj, '', func, NaN]);
+        expect(result).to.eql([obj, func]);
     });
 
     it('does not modify the original array', () => {
