@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "nyc mocha \"src/test/*.test.js\"",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "test": "mocha 'src/test/**/*.test.js'",
+    "test:coverage": "nyc npm test",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "nyc": {
     "reporter": ["lcov", "text"],
