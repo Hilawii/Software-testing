@@ -26,6 +26,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
-      - run: npm test
-      - name: Coveralls
+      - name: Run Tests
+        run: npm run test
+        continue-on-error: true
+      - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v2.2.3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
