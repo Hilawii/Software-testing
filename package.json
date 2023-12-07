@@ -5,21 +5,26 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha \"test/*2.test.js\"",
-    "coverage": "nyc --reporter=lcov --reporter=text --all mocha \"test/*2.test.js\""
+    "test": "mocha \"test/*.test.js\"",
+    "coverage": "c8 npm test",
+    "coverage-report": "c8 report --reporter=lcov",
+    "coveralls": "c8 report --reporter=lcovonly && cat ./coverage/lcov.info | coveralls"
   },
-  "nyc": {
-    "reporter": ["lcov", "text"],
-    "include": ["src/*.js"],
-    "all": true,
-    "useSpawnWrap": true
+  "c8": {
+    "include": [
+      "src/*.js"
+    ],
+    "exclude": [
+      "src/.internal/*.js"
+    ],
+    "all": true
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "c8": "^8.0.1",
     "chai": "^4.3.10",
     "coveralls": "^3.1.1",
-    "mocha": "^10.2.0",
-    "nyc": "^15.1.0"
+    "mocha": "^10.2.0"
   }
 }
