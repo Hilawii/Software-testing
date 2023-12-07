@@ -7,8 +7,7 @@
   "scripts": {
     "test": "mocha \"test/*.test.js\"",
     "coverage": "c8 npm test",
-    "coverage-report": "c8 report --reporter=lcov",
-    "coveralls": "c8 report --reporter=lcovonly && cat ./coverage/lcov.info | coveralls"
+    "coverage-report": "c8 report --reporter=lcov"
   },
   "c8": {
     "include": [
